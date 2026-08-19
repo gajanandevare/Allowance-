@@ -1,0 +1,151 @@
+:root {
+  --border: #d7dbe0;
+  --bg-head: #f4f6f8;
+  --accent: #2a6ebb;
+  --accent-dark: #1f5595;
+  --danger: #c0392b;
+  --text: #202428;
+  --muted: #6b7280;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: #fbfbfc;
+}
+
+header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.toolbar label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input[type="month"] {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+button:hover { background: var(--accent-dark); }
+
+button.secondary {
+  background: white;
+  color: var(--accent-dark);
+  border: 1px solid var(--accent);
+}
+
+button.secondary:hover { background: #eef4fb; }
+
+button.danger-link {
+  background: transparent;
+  color: var(--danger);
+  font-weight: 400;
+  padding: 0.2rem 0.5rem;
+}
+
+button.danger-link:hover { background: #fdecea; }
+
+main {
+  padding: 1.25rem 1.5rem 3rem;
+}
+
+.status {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.status.ok { background: #e6f4ea; color: #1e7e34; }
+.status.err { background: #fdecea; color: var(--danger); }
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+  min-width: 1100px;
+}
+
+thead th {
+  background: var(--bg-head);
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+tbody td, tfoot td {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+tfoot td {
+  font-weight: 700;
+  background: var(--bg-head);
+  border-top: 2px solid var(--border);
+}
+
+tbody input, tbody select {
+  width: 100%;
+  padding: 0.35rem 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  background: transparent;
+}
+
+tbody input:hover, tbody select:hover { border-color: var(--border); }
+tbody input:focus, tbody select:focus { border-color: var(--accent); background: white; outline: none; }
+
+.amount-cell { text-align: right; white-space: nowrap; }
+.num-input { text-align: center; }
+
+.hint {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+}

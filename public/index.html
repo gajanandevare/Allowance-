@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAP Shift Allowance Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>SAP Shift Allowance Tracker</h1>
+    <div class="toolbar">
+      <label for="month">Month</label>
+      <input type="month" id="month" />
+      <button id="copyPrevBtn" class="secondary" title="Copy employee list from the previous month">Copy Employees from Previous Month</button>
+      <button id="addRowBtn">+ Add Employee</button>
+      <button id="sendEmailBtn" class="secondary">Send Email Now</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="status" class="status" hidden></div>
+    <div class="table-wrap">
+      <table id="allowanceTable">
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Employee ID</th>
+            <th>Days Present</th>
+            <th>Transport Days</th>
+            <th>On-Call Days</th>
+            <th>Shift Type</th>
+            <th>Shift Allowance</th>
+            <th>Transport Allowance</th>
+            <th>On-Call Allowance</th>
+            <th>Total</th>
+            <th>Remark (On-Call)</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">Total</td>
+            <td id="totalDaysPresent">0</td>
+            <td id="totalTransportDays">0</td>
+            <td id="totalOnCallDays">0</td>
+            <td></td>
+            <td id="totalShiftAmount">Rs. 0</td>
+            <td id="totalTransportAmount">Rs. 0</td>
+            <td id="totalOnCallAmount">Rs. 0</td>
+            <td id="totalAmount">Rs. 0</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="hint">
+      Shift Allowance = Days Present &times; <span id="rateShift">250</span>. Transport Allowance = Transport Days
+      &times; <span id="rateTransport">300</span>. On-Call Allowance = On-Call Days &times; <span id="rateOnCall">750</span>.
+      Rows save automatically as you edit them.
+    </p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
